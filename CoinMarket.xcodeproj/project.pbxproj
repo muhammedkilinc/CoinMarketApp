@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		A468558E25AF7BF30051C26B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A468558C25AF7BF30051C26B /* Main.storyboard */; };
 		A468559025AF7BF50051C26B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A468558F25AF7BF50051C26B /* Assets.xcassets */; };
 		A468559325AF7BF50051C26B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A468559125AF7BF50051C26B /* LaunchScreen.storyboard */; };
+		A468559D25AF7D050051C26B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A468559C25AF7D050051C26B /* Alamofire */; };
+		A46855A125AF7D370051C26B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A46855A025AF7D370051C26B /* RxSwift */; };
+		A46855A325AF7D370051C26B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A46855A225AF7D370051C26B /* RxCocoa */; };
+		A46855A525AF7D370051C26B /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A46855A425AF7D370051C26B /* RxRelay */; };
+		A4B6542B25AF80C9007DDBFD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A4B6542A25AF80C9007DDBFD /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A46855A325AF7D370051C26B /* RxCocoa in Frameworks */,
+				A46855A125AF7D370051C26B /* RxSwift in Frameworks */,
+				A46855A525AF7D370051C26B /* RxRelay in Frameworks */,
+				A468559D25AF7D050051C26B /* Alamofire in Frameworks */,
+				A4B6542B25AF80C9007DDBFD /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +93,13 @@
 			dependencies = (
 			);
 			name = CoinMarket;
+			packageProductDependencies = (
+				A468559C25AF7D050051C26B /* Alamofire */,
+				A46855A025AF7D370051C26B /* RxSwift */,
+				A46855A225AF7D370051C26B /* RxCocoa */,
+				A46855A425AF7D370051C26B /* RxRelay */,
+				A4B6542A25AF80C9007DDBFD /* Kingfisher */,
+			);
 			productName = CoinMarket;
 			productReference = A468558325AF7BF30051C26B /* CoinMarket.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +127,11 @@
 				Base,
 			);
 			mainGroup = A468557A25AF7BF30051C26B;
+			packageReferences = (
+				A468559B25AF7D050051C26B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A468559F25AF7D370051C26B /* XCRemoteSwiftPackageReference "RxSwift" */,
+				A4B6542925AF80C9007DDBFD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = A468558425AF7BF30051C26B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,6 +363,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A468559B25AF7D050051C26B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+		A468559F25AF7D370051C26B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		A4B6542925AF80C9007DDBFD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A468559C25AF7D050051C26B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A468559B25AF7D050051C26B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		A46855A025AF7D370051C26B /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A468559F25AF7D370051C26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		A46855A225AF7D370051C26B /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A468559F25AF7D370051C26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A46855A425AF7D370051C26B /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A468559F25AF7D370051C26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		A4B6542A25AF80C9007DDBFD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4B6542925AF80C9007DDBFD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A468557B25AF7BF30051C26B /* Project object */;
 }
