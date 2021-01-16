@@ -33,3 +33,22 @@ struct Cryptocurrency: Codable {
   }
 }
 
+extension Cryptocurrency {
+  var formattedPrice: String {
+    guard let quote = quote, let item = quote.first else {
+      return String.empty
+    }
+    let formatter = NumberFormatter.currencyFormatter
+    formatter.currencyCode = item.key
+    let price = formatter.string(from: NSNumber(value: item.value.price ?? 0.0))
+    return price ?? .empty
+  }
+  
+  var percentChange24h: Double {
+    guard let quote = quote, let item = quote.first else {
+      return 0
+    }
+    return item.value.percentChange24h ?? 0.0
+  }
+}
+

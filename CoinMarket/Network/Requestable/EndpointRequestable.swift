@@ -42,7 +42,7 @@ extension EndpointRequestable: Requestable {
     var request = URLRequest(url: urlComponents.url!)
     
     for (key, value) in headers {
-      request.setValue(key, forHTTPHeaderField: value)
+      request.setValue(value, forHTTPHeaderField: key)
     }
     
     switch self {
