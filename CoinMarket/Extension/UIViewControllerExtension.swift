@@ -23,9 +23,9 @@ extension UIStoryboard {
 }
 
 extension UIViewController {
-  static func loadFromStoryboard<T: UIViewController>(_ name: String = "Main") -> T {
+  static func loadFromStoryboard(_ name: String = "Main") -> Self {
     let storyboard = UIStoryboard.storyboard(name: name)
-    let controller = storyboard.instantiateViewController(withIdentifier: T.reuseID) as! T
-    return controller
+    let controller = storyboard.instantiateViewController(withIdentifier: Self.reuseID)
+    return controller as! Self
   }
 }

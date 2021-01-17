@@ -69,8 +69,10 @@ class CryptocurrencyListViewController: UIViewController {
       .disposed(by: disposeBag)
 
     tableView.rx.modelSelected(CryptocurrencyItemViewModel.self)
-      .subscribe(onNext: { item in
-        
+      .subscribe(onNext: { viewModel in
+        let viewController = CryptocurrencyDetailViewController.loadFromStoryboard()
+        viewController.viewModel.cryptocurrency = viewModel.item
+        self.navigationController?.pushViewController(viewController, animated: true)
       })
       .disposed(by: disposeBag)
     
@@ -104,5 +106,6 @@ class CryptocurrencyListViewController: UIViewController {
     })
     .disposed(by: disposeBag)
 
+    pullToRefreshRelay.accept(())
   }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 struct CryptocurrencyInfoRequest: Encodable {
-  let id: [Int]
+  let id: Int
 }
