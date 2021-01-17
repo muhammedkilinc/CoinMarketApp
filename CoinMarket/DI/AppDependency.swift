@@ -19,6 +19,7 @@ class AppDependency {
   func register() {
     // register Endpoint
     container.register(Endpoint.self) { _ in
+//      return EndpointMock()
       return EndpointImp()
     }.inObjectScope(.container)
 
