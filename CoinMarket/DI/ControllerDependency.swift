@@ -30,5 +30,16 @@ class ControllerDepedency {
       controller.viewModel = CryptocurrencyListViewModel(endpoint: endpoint, imageProvider: imageProvider)
     }
     
+    container.storyboardInitCompleted(CryptocurrencyDetailViewController.self) { resolver, controller in
+      guard let endpoint = resolver.resolve(EndpointProxy.self) else {
+        fatalError("endpoint not found")
+      }
+      
+      guard let imageProvider = resolver.resolve(CryptocurencyImageProvider.self) else {
+        fatalError("imageProvider not found")
+      }
+      controller.viewModel = CryptocurrencyDetailViewModel(endpoint: endpoint, imageProvider: imageProvider)
+    }
+    
   }
 }

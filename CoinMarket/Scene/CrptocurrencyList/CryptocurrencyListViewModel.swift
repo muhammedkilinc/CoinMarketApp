@@ -46,14 +46,14 @@ class CryptocurrencyListViewModel: ViewModelType {
   
   func transform(input: Input) -> Output {
     
-    let willAppearRequest = input.willAppear
-      .do(onNext: { _ in
-        self.start = 1
-        self.responseRelay.accept([])
-      })
-      .map { _ in
-        return CryptocurrencyListRequest(start: self.start, limit: self.limit, cryptocurrencyType: .all)
-      }
+//    let willAppearRequest = input.willAppear
+//      .do(onNext: { _ in
+//        self.start = 1
+//        self.responseRelay.accept([])
+//      })
+//      .map { _ in
+//        return CryptocurrencyListRequest(start: self.start, limit: self.limit, cryptocurrencyType: .all)
+//      }
     
     let refreshRequest = input.pullToRefresh
       .do(onNext: { _ in
@@ -76,7 +76,7 @@ class CryptocurrencyListViewModel: ViewModelType {
         return CryptocurrencyListRequest(start: self.start, limit: self.limit, cryptocurrencyType: .all)
       }
     
-    let networkSource = Observable.merge(willAppearRequest, refreshRequest, loadMoreRequest)
+    let networkSource = Observable.merge(refreshRequest, loadMoreRequest)
       .flatMapLatest { (request) -> Observable<Resource<[Cryptocurrency]>> in
         return self.endpoint.cryptocurrencyLatest(request: request)
       }.do(onNext: { _ in

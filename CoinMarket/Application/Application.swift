@@ -24,9 +24,8 @@ class Application {
   }()
   
   func configureMainInterface(in window: UIWindow) {
-    let storyBoard = SwinjectStoryboard.create(name: "Main", bundle: Bundle.main, container: container)
-    let mainViewController = storyBoard.instantiateViewController(withIdentifier: CryptocurrencyListViewController.reuseID)
-    window.rootViewController = UINavigationController(rootViewController: mainViewController)
+    let viewController: CryptocurrencyListViewController = CryptocurrencyListViewController.loadFromStoryboard()
+    window.rootViewController = UINavigationController(rootViewController: viewController)
   }
   
 }
