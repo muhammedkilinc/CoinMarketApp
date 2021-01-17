@@ -6,29 +6,27 @@
 //
 
 import UIKit
+import Swinject
+import SwinjectStoryboard
 
 class Application {
   static let shared = Application()
-  
-  private let endpoint: Endpoint
-  private let imageProvider: CryptocurencyImageProvider
 
-  private init() {
-    self.endpoint = EndpointImp()
-    self.imageProvider = CryptocurencyImageProvider(baseUrl: Constants.API.imageURL)
-  }
+  var container: Container = {
+    let container = Container()
+    // initialize singletons
+    let singletons = AppDependency(container: container)
+    singletons.register()
+    // initialize controller
+    let controllers = ControllerDepedency(container: container)
+    controllers.register()
+    return container
+  }()
   
   func configureMainInterface(in window: UIWindow) {
-    let networkNavigationController = UINavigationController()
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let networkNavigator = CryptocurrencyListNavigatorImp(storyboard: storyboard,
-                                                          endpoint: self.endpoint,
-                                                          navigationController: networkNavigationController,
-                                                          imageProvider: imageProvider)
-    
-    window.rootViewController = networkNavigationController
-    
-    networkNavigator.toCryptocurrencyList()
+    let storyBoard = SwinjectStoryboard.create(name: "Main", bundle: Bundle.main, container: container)
+    let mainViewController = storyBoard.instantiateViewController(withIdentifier: CryptocurrencyListViewController.reuseID)
+    window.rootViewController = UINavigationController(rootViewController: mainViewController)
   }
   
 }

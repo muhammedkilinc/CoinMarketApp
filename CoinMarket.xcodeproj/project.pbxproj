@@ -11,6 +11,11 @@
 		A430ED0C25B309C200E0A145 /* NumberFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A430ED0B25B309C200E0A145 /* NumberFormatterExtension.swift */; };
 		A430ED1025B30B3400E0A145 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A430ED0F25B30B3400E0A145 /* Style.swift */; };
 		A430ED1525B3314000E0A145 /* CryptocurrencyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A430ED1425B3314000E0A145 /* CryptocurrencyImage.swift */; };
+		A430ED3825B430A400E0A145 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = A430ED3725B430A400E0A145 /* Swinject */; };
+		A430ED3B25B430DC00E0A145 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A430ED3A25B430DC00E0A145 /* AppDependency.swift */; };
+		A430ED4425B441F000E0A145 /* SwinjectStoryboard in Frameworks */ = {isa = PBXBuildFile; productRef = A430ED4325B441F000E0A145 /* SwinjectStoryboard */; };
+		A430ED4725B441FF00E0A145 /* ControllerDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A430ED4625B441FF00E0A145 /* ControllerDependency.swift */; };
+		A430ED4A25B4461B00E0A145 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A430ED4925B4461B00E0A145 /* UIViewControllerExtension.swift */; };
 		A468558725AF7BF30051C26B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468558625AF7BF30051C26B /* AppDelegate.swift */; };
 		A468558925AF7BF30051C26B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468558825AF7BF30051C26B /* SceneDelegate.swift */; };
 		A468558E25AF7BF30051C26B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A468558C25AF7BF30051C26B /* Main.storyboard */; };
@@ -57,6 +62,9 @@
 		A430ED0B25B309C200E0A145 /* NumberFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterExtension.swift; sourceTree = "<group>"; };
 		A430ED0F25B30B3400E0A145 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		A430ED1425B3314000E0A145 /* CryptocurrencyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptocurrencyImage.swift; sourceTree = "<group>"; };
+		A430ED3A25B430DC00E0A145 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		A430ED4625B441FF00E0A145 /* ControllerDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDependency.swift; sourceTree = "<group>"; };
+		A430ED4925B4461B00E0A145 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		A468558325AF7BF30051C26B /* CoinMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A468558625AF7BF30051C26B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A468558825AF7BF30051C26B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +113,8 @@
 				A46855A525AF7D370051C26B /* RxRelay in Frameworks */,
 				A468559D25AF7D050051C26B /* Alamofire in Frameworks */,
 				A4B6542B25AF80C9007DDBFD /* Kingfisher in Frameworks */,
+				A430ED4425B441F000E0A145 /* SwinjectStoryboard in Frameworks */,
+				A430ED3825B430A400E0A145 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +166,15 @@
 			path = CrptocurrencyList;
 			sourceTree = "<group>";
 		};
+		A430ED3D25B430E600E0A145 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				A430ED3A25B430DC00E0A145 /* AppDependency.swift */,
+				A430ED4625B441FF00E0A145 /* ControllerDependency.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		A468557A25AF7BF30051C26B = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +198,7 @@
 				A4B6543825AF82A5007DDBFD /* Network */,
 				A4AE16FE25B1F6D7004580FA /* Entity */,
 				A4AE170125B2112D004580FA /* Common */,
+				A430ED3D25B430E600E0A145 /* DI */,
 				A430ED1825B33E0200E0A145 /* Model */,
 				A4AE170925B211C9004580FA /* Scene */,
 				A4AE171C25B21D74004580FA /* Application */,
@@ -283,6 +303,7 @@
 				A4AE16D925B17339004580FA /* ObservableResponse.swift */,
 				A430ECC225B2F27F00E0A145 /* UIScrollViewExtension.swift */,
 				A430ED0B25B309C200E0A145 /* NumberFormatterExtension.swift */,
+				A430ED4925B4461B00E0A145 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -339,6 +360,8 @@
 				A46855A225AF7D370051C26B /* RxCocoa */,
 				A46855A425AF7D370051C26B /* RxRelay */,
 				A4B6542A25AF80C9007DDBFD /* Kingfisher */,
+				A430ED3725B430A400E0A145 /* Swinject */,
+				A430ED4325B441F000E0A145 /* SwinjectStoryboard */,
 			);
 			productName = CoinMarket;
 			productReference = A468558325AF7BF30051C26B /* CoinMarket.app */;
@@ -371,6 +394,8 @@
 				A468559B25AF7D050051C26B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A468559F25AF7D370051C26B /* XCRemoteSwiftPackageReference "RxSwift" */,
 				A4B6542925AF80C9007DDBFD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A430ED3625B430A400E0A145 /* XCRemoteSwiftPackageReference "Swinject" */,
+				A430ED4225B441F000E0A145 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */,
 			);
 			productRefGroup = A468558425AF7BF30051C26B /* Products */;
 			projectDirPath = "";
@@ -406,6 +431,7 @@
 				A4AE16F625B1F370004580FA /* CryptocurrencyInfoRequest.swift in Sources */,
 				A4B6543A25AF82C8007DDBFD /* Requestable.swift in Sources */,
 				A4AE170B25B211F4004580FA /* CryptocurrencyListViewController.swift in Sources */,
+				A430ED3B25B430DC00E0A145 /* AppDependency.swift in Sources */,
 				A4AE170725B2115A004580FA /* Reusable.swift in Sources */,
 				A4AE16E325B1772F004580FA /* Platform.swift in Sources */,
 				A4B6543E25AF83B2007DDBFD /* EndpointRequestable.swift in Sources */,
@@ -423,6 +449,8 @@
 				A4B6542E25AF824E007DDBFD /* DataRequestExtension.swift in Sources */,
 				A468558725AF7BF30051C26B /* AppDelegate.swift in Sources */,
 				A430ED0C25B309C200E0A145 /* NumberFormatterExtension.swift in Sources */,
+				A430ED4A25B4461B00E0A145 /* UIViewControllerExtension.swift in Sources */,
+				A430ED4725B441FF00E0A145 /* ControllerDependency.swift in Sources */,
 				A4AE16E025B1770F004580FA /* Cryptocurrency.swift in Sources */,
 				A4B6544B25B07400007DDBFD /* CryptocurrencyType.swift in Sources */,
 				A4B6544725B0727A007DDBFD /* CryptocurrencyListRequest.swift in Sources */,
@@ -639,6 +667,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A430ED3625B430A400E0A145 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
+		A430ED4225B441F000E0A145 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BarredEwe/SwinjectStoryboard.git";
+			requirement = {
+				branch = swiftPM;
+				kind = branch;
+			};
+		};
 		A468559B25AF7D050051C26B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -666,6 +710,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A430ED3725B430A400E0A145 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A430ED3625B430A400E0A145 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		A430ED4325B441F000E0A145 /* SwinjectStoryboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A430ED4225B441F000E0A145 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */;
+			productName = SwinjectStoryboard;
+		};
 		A468559C25AF7D050051C26B /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A468559B25AF7D050051C26B /* XCRemoteSwiftPackageReference "Alamofire" */;

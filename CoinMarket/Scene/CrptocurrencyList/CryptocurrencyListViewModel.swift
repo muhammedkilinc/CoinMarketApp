@@ -11,7 +11,6 @@ import RxCocoa
 
 class CryptocurrencyListViewModel: ViewModelType {
   
-  private let navigator: CryptocurrencyListNavigator
   private let endpoint: EndpointProxy
   
   let imageProvider: CryptocurencyImageProvider
@@ -31,7 +30,7 @@ class CryptocurrencyListViewModel: ViewModelType {
     let willAppear: Observable<Void>
     let pullToRefresh: Observable<Void>
     let loadMore: Observable<Void>
-    let selection: Observable<CryptocurrencyItemViewModel>
+//    let selection: Observable<CryptocurrencyItemViewModel>
   }
   
   struct Output {
@@ -40,9 +39,8 @@ class CryptocurrencyListViewModel: ViewModelType {
     var info: Observable<String?>
   }
   
-  init(endpoint: EndpointProxy, navigator: CryptocurrencyListNavigator, imageProvider: CryptocurencyImageProvider) {
+  init(endpoint: EndpointProxy, imageProvider: CryptocurencyImageProvider) {
     self.endpoint = endpoint
-    self.navigator = navigator
     self.imageProvider = imageProvider
   }
   
@@ -108,11 +106,11 @@ class CryptocurrencyListViewModel: ViewModelType {
     responseSource.bind(to: responseRelay)
       .disposed(by: disposeBag)
     
-    input.selection
-      .subscribe(onNext: { viewModel in
-        self.navigator.toDetail(item: viewModel.item)
-      })
-      .disposed(by: disposeBag)
+//    input.selection
+//      .subscribe(onNext: { viewModel in
+////        self.navigator.toDetail(item: viewModel.item)
+//      })
+//      .disposed(by: disposeBag)
     
     return Output(items: responseRelay.asObservable(),
                   loading: loadingRelay.asObservable(),

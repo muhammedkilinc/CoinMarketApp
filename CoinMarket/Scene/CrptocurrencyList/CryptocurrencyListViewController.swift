@@ -68,14 +68,15 @@ class CryptocurrencyListViewController: UIViewController {
       .bind(to: loadMoreRelay)
       .disposed(by: disposeBag)
 
-    
-    
-    let selection = tableView.rx.modelSelected(CryptocurrencyItemViewModel.self)
+    tableView.rx.modelSelected(CryptocurrencyItemViewModel.self)
+      .subscribe(onNext: { item in
+        
+      })
+      .disposed(by: disposeBag)
     
     let input = CryptocurrencyListViewModel.Input(willAppear: viewWillAppearRelay.asObservable(),
                                                   pullToRefresh: pullToRefreshRelay.asObservable(),
-                                                  loadMore: loadMoreRelay.asObservable(),
-                                                  selection: selection.asObservable())
+                                                  loadMore: loadMoreRelay.asObservable())
     
     let output = viewModel.transform(input: input)
     

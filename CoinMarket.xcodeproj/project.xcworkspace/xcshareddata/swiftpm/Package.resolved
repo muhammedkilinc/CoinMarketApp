@@ -27,6 +27,24 @@
           "revision": "c8742ed97fc2f0c015a5ea5eddefb064cd7532d2",
           "version": "6.0.0"
         }
+      },
+      {
+        "package": "Swinject",
+        "repositoryURL": "https://github.com/Swinject/Swinject",
+        "state": {
+          "branch": null,
+          "revision": "8a76d2c74bafbb455763487cc6a08e91bad1f78b",
+          "version": "2.7.1"
+        }
+      },
+      {
+        "package": "SwinjectStoryboard",
+        "repositoryURL": "https://github.com/BarredEwe/SwinjectStoryboard.git",
+        "state": {
+          "branch": "swiftPM",
+          "revision": "ae8b71527412af24e6299f3393ff816b72da916f",
+          "version": null
+        }
       }
     ]
   },
